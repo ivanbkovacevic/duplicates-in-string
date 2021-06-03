@@ -6,6 +6,7 @@ let text= document.getElementById("slovo");
 let recForDisplay;
 const grabText=()=>{
      rec=document.getElementById("rec").value;
+     rec=rec.toUpperCase();
     recForDisplay=rec;
     rec=[...rec];
     rec= rec.filter((e)=>{
