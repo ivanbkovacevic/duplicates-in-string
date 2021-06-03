@@ -1,8 +1,9 @@
 #slovo {
   color: #171b11;
   font-size: 24px;
-  background: lightblue;
+  border: 3px solid lightblue;
   padding: 50px;
+  width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,6 +11,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+ul {
+  list-style-image: url("li-icon-r.png");
 }
 
 p {

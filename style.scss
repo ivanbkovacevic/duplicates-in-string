@@ -1,10 +1,14 @@
 #slovo{
     color: rgb(23, 27, 17);
    font-size: 24px;
-   background: lightblue;
+   border:3px solid lightblue;
    padding: 50px;
- display: flex;
-flex-direction: column;
+   width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+ul{
+    list-style-image: url('li-icon-r.png');
 }
 
 p{
