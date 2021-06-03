@@ -1,17 +1,18 @@
 
 
 let rec=''
+let naslov= document.getElementById("naslov");
+let text= document.getElementById("slovo");
+let recForDisplay;
 const grabText=()=>{
      rec=document.getElementById("rec").value;
-    let recForDisplay=rec;
-
+    recForDisplay=rec;
     rec=[...rec];
     rec= rec.filter((e)=>{
           return e !==' ' && e!==',';
       });
-
+    
   let letters=[];
-  
   let count=0;
   
   for (let k = 0; k < rec.length; k++) {
@@ -33,17 +34,32 @@ const grabText=()=>{
   letters.sort((a, b) => (a.count > b.count) ? -1 : 1)
 
   
-  let naslov= document.getElementById("naslov");
-  let text= document.getElementById("slovo");
+//   let naslov= document.getElementById("naslov");
+//   let text= document.getElementById("slovo");
       naslov.innerHTML= `String "${recForDisplay}" has this letters:`;
                 letters.forEach(element => {
-                    let slovo = document.createElement("P");   
-                    slovo.innerHTML +=`Letter '${element.letter}' is ${element.count} time/s `;
+                    let time='';
+                    if(element.count<2){
+                        time=`Letter ${element.letter} is ${element.count} time`;
+                    }else{
+                        time=`Letter ${element.letter} is ${element.count} times`;
+                    }
+                    let slovo = document.createElement("LI");   
+                    slovo.innerHTML +=time;
                     text.appendChild(slovo);
-                  });
-     
+                  }); 
 }
 
-          
+const clearText=()=>{
+    rec=document.getElementById("rec");
+    rec.value='';
+    recForDisplay='';
+    naslov.innerHTML= `String " " has this letters:`;
+    console.log(rec +'rec')
+    while (text.hasChildNodes()) {  
+        text.removeChild(text.firstChild);
+      }
+   
+}      
 
    
