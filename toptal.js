@@ -15,11 +15,11 @@ function solution(A) {
 let max=Math.max(...withOutDuplicates)
 //pronalazenje najmanjeg poyitivnog koji nedostaje
 withOutDuplicates.forEach((elem,ind,arr) => {
-    if(ind!==0){
-        if(elem-arr[ind-1]>1){
+    if(ind!==0){//preskakanje prvog elementa
+        if(elem-arr[ind-1]>1){//proveravanje da li je razlika izmedju dva elementa veca od 1 
             result=elem-1;
         }else{
-            result=max+1;
+            result=max+1;//rezultat je van arr
         } 
     }   
    });
